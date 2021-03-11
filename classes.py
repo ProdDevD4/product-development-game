@@ -1,38 +1,42 @@
 import pygame
+import config
 from pygame.locals import *
-from config.py import *
+from config import *
 import random
 import math
-
+windowGame =  pygame.display.set_mode((windowWidth,windowWidth))
 
 class World():                #   Class to construct our world
     def __init__(self, data):    #   Constructor that takes world data as local variable
         self.tileList = []
-#        maa = pygame.image.load("img/maa.png")
-#        kelluva = pygame.image.load("img/kelluu.png")
+        
+        #load images
+        sandImg = pygame.image.load("img/Blocks/sandBlock.png")
+        dirtImg = pygame.image.load("img/Blocks/dirtBlock.png")
+        stoneImg = pygame.image.load("img/Blocks/stoneBlock.png")
         rowCount = 0           #   start at row 0
-        columnCount = 0       #   start at column 0
         for row in data:       #   for loop to iterate through maailma_data and set images accordingly
+            columnCount = 0
             for tile in row:
                 if tile == 1:
-                    img = pygame.transform.scale(pygame.image.load("img/Blocks/sandBlock.png").convert_alpha(), (tileSize, tileSize))
+                    img = pygame.transform.scale(sandImg, (tileSize, tileSize))
                     imgRect = img.get_rect()
-                    imgRectX = columnCount * tileSize        
-                    imgRectY = rowCount * tileSize
+                    imgRect.x = columnCount * tileSize        
+                    imgRect.y = rowCount * tileSize
                     tile = (img, imgRect)              #   tuple to hold tile image and coordinates
                     self.tileList.append(tile)        #   append tile to tile list
                 elif tile == 2:   #   1 = ground
-                    img = pygame.transform.scale(pygame.image.load("img/Blocks/dirtBlock.png").convert_alpha(), (tileSize, tileSize))
+                    img = pygame.transform.scale(dirtImg, (tileSize, tileSize))
                     imgRect = img.get_rect()
-                    imgRectX = columnCount * tileSize        
-                    imgRectY = rowCount * tileSize
+                    imgRect.x = columnCount * tileSize        
+                    imgRect.y = rowCount * tileSize
                     tile = (img, imgRect)              #   tuple to hold tile image and coordinates
                     self.tileList.append(tile)        #   append tile to tile list
                 elif tile == 0:   #   2 = floating ground
-                    img = pygame.transform.scale(pygame.image.load("img/Blocks/stoneBlock.png").convert_alpha(), (tileSize, tileSize))
+                    img = pygame.transform.scale(stoneImg, (tileSize, tileSize))
                     imgRect = img.get_rect()
-                    imgRectX = columnCount * tileSize
-                    imgRectY = rowCount * tileSize
+                    imgRect.x = columnCount * tileSize
+                    imgRect.y = rowCount * tileSize
                     tile = (img, imgRect)
                     self.tileList.append(tile)
                     
@@ -62,7 +66,7 @@ class Player():                                               #   create Class c
     
     def levelUp(self):
         lvl += 1
-    
+        
     
     def update(self):   #   function to update hero's position
         deltaX = 0
@@ -104,3 +108,7 @@ class Enemy():
         self.rect.x = x
         self.rect.y = y
 
+
+#   create hero pelaaja and the world
+player = Player(100, windowHeight - 150, 1, 1, [])
+world = World(worldDataGrid)

@@ -16,6 +16,20 @@ orange = pygame.Color(255, 165, 0)   #Orange
 #   create window and set tile size
 windowWidth = 900
 windowHeight = 900
-windowGame =  pygame.display.set_mode((windowWidth,windowWidth))
-pygame.display.set_caption("D4 gäng")
 tileSize = 90
+
+
+
+
+worldDataGrid = [
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 
+[2, 0, 0, 0, 1, 1, 1, 0, 0, 2], 
+[0, 2, 0, 0, 0, 0, 0, 0, 2, 0], 
+[0, 0, 2, 0, 0, 0, 0, 2, 0, 0],
+[0, 0, 0, 2, 0, 0, 2, 0, 0, 0],
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 2, 0, 0, 0, 2, 0],
+[0, 0, 0, 2, 0, 0, 1, 0, 0, 0],
+[0, 0, 2, 0, 0, 0, 1, 0, 0, 0], 
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+]

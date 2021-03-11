@@ -3,14 +3,16 @@
 #
 # platformer made with pygame
 import pygame
+import config
+import classes
 from pygame.locals import *
-from config.py import *
-from classes.py import *
+from config import *
+from classes import *
 import random
 import sys     # sys-module will be needed to exit the program
 
 pygame.init()
-windowGame =  pygame.display.set_mode((windowWidth,windowWidth))
+
 pygame.display.set_caption("D4 gäng")
 # Load static images
 
@@ -25,9 +27,7 @@ def drawGrid():
 
 
 
-#   create hero pelaaja and the world
-player = Player(100, windowHeight - 150, 1, 1, [])
-world = World(worldDataGrid)
+
 
 
 
@@ -49,14 +49,8 @@ while run:
                 sys.exit()    # the whole python program exits
 
 
-
-
-
-
-
-
     # clear the display-surface and draw all the Surfaces again
-    windowGame.blit(tausta, (0,0)) # without this, moving characters would have a "trace"
+    # windowGame.blit(tausta, (0,0)) # without this, moving characters would have a "trace"
     world.draw()
     drawGrid()
     player.update()
