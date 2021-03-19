@@ -10,6 +10,11 @@ from config import *
 from classes import *
 import random
 import sys     # sys-module will be needed to exit the program
+import pytmx
+from pytmx.util_pygame import load_pygame
+
+tiled_map = load_pygame("levels/level1.tmx")
+
 
 pygame.init()
 
@@ -50,10 +55,10 @@ while run:
 
 
     # clear the display-surface and draw all the Surfaces again
-    # windowGame.blit(tausta, (0,0)) # without this, moving characters would have a "trace"
+    windowGame.blit(background, (0, 0))
     world.draw()
     drawGrid()
     player.update()
-    
+    print (player.playerWidth, player.playerWidth)
     pygame.display.update()
     

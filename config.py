@@ -1,4 +1,4 @@
-import pygame
+    import pygame
 
 FPS = pygame.time.Clock()   #   clock for our tic rate
 
@@ -13,10 +13,18 @@ red = pygame.Color(255, 0, 0)       # Red
 
 orange = pygame.Color(255, 165, 0)   #Orange
 
+
+
+        
+#load images
+sandImg = pygame.image.load("img/sand.png")
+grassImg = pygame.image.load("img/grass.png")
+#stoneImg = pygame.image.load("img/stoneBlock.png")
+duck = pygame.image.load("img/duck_idle.png")
 #   create window and set tile size
-windowWidth = 900
-windowHeight = 900
-tileSize = 90
+windowWidth = 960
+windowHeight = 960
+tileSize = 36
 
 
 
