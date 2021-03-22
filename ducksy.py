@@ -268,7 +268,7 @@ class DucksyGame:
         elif pressed[K_RIGHT]:
             self.hero.velocity[0] = HERO_MOVE_SPEED
 
-        if pressed[K_a]:
+        elif pressed[K_a]:
             self.hero.velocity[0] = -HERO_MOVE_SPEED
         elif pressed[K_d]:
             self.hero.velocity[0] = HERO_MOVE_SPEED
