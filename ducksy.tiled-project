@@ -1,0 +1,11 @@
+{
+    "automappingRulesFile": "",
+    "commands": [
+    ],
+    "extensionsPath": "extensions",
+    "folders": [
+        "tutorial/data",
+        "img/Platformer Art Complete Pack"
+    ],
+    "objectTypesFile": ""
+}

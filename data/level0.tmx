@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.4" tiledversion="1.4.3" orientation="orthogonal" renderorder="right-down" width="50" height="50" tilewidth="32" tileheight="32" infinite="0" nextlayerid="8" nextobjectid="112">
+ <tileset firstgid="1" name="Revolution_Grasslands" tilewidth="32" tileheight="32" tilecount="190" columns="10">
+  <image source="revolution_grasslands.png" trans="a349a4" width="320" height="608"/>
+  <tile id="5">
+   <properties>
+    <property name="ranomd" value="tile"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="191" name="revolution_snow" tilewidth="32" tileheight="32" tilecount="154" columns="11">
+  <image source="revolution_snow.png" trans="a349a4" width="352" height="448"/>
+ </tileset>
+ <tileset firstgid="345" name="revolution_town" tilewidth="32" tileheight="32" tilecount="275" columns="11">
+  <image source="revolution_town.png" trans="a349a4" width="352" height="831"/>
+ </tileset>
+ <tileset firstgid="620" source="water.tsx"/>
+ <tileset firstgid="764" source="../lainalaatat.tsx"/>
+ <layer id="1" name="under0" width="50" height="50">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+2Z226DMBBEHQf7/z+5qcRIh6kDMS0Gqn0YOQEMO3sDjx8ppceFUV94vjDN4zfKDB2vF7BzC7Q1z7/1/4nzLe4F1+SV60eAzyeXMo95hvOo8zXZ7lEa149AMbtoO+PjMaTdjKlycjQP2a3cyBaX2uBRcZwxUY2dwUP5JJ8qJqwRtyunZQ6RS4v3CNCvGlm3rbxS/rR6neaN5kF7GQv63HnomOzW3IL/R9pMX3se0ObJzvv7Y8K5YvdQnh1dC96LxI0+Zm3omN+HvYr+aOXhUbXAnPF3t/yp3xpb8cg25138jsgrvrvLzmeqx9EvJS379ZE8/tIfspm1/i4PA4FAIBAIBAKBq4NrX37/30FrJMRBtnNdf7ZtPdA619dgd1trcB1OnbFHA+Vai2uw0fFgTYhTTzxcu9gTT+a069Kf6Gesb9fZe+NBP/T2iZb25xr7mk3USFxj+dQG9om98XCNyfX0snFP7hNwTo/mxnxgrfXy8OfXtMyptXvSh9SnR/cr2u6aGfdituazNsRrJA/qnRzJaS1HqKlOhpE82CNcpxaHrfqgHs33wEge7kPvf2f49jd55d9IZ++H7eXR+m69Gw/fv2S9nLXP2gvu29T0s27vuJYIBAKB/4wvdqPEdxAnAAA=
+  </data>
+ </layer>
+ <layer id="2" name="under1" width="50" height="50">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+2XSUvDQBTH0zbtFxKXi9tJPXoXRD0IoiKCx6oHwapfwfXmelNQ8KCg0IPrzfWmoDelevcfmUdfS5KZJmkzgXnwY0LapO+XeZN5tSwTJkyYMGEivmgCqRrIgBzIClSuadbIw8nZFmNauGTYmBQPciEf7pZOmIcXtuTzJHjkrHJtedVXXB5UK1mf3Oh8TnyXrslp5MFz9fKg/Cl3qi0a+ZqJ00P2TiVH8iAnmhfuH4cHryeVd1G1G+0tvL7i8ODPk9aw6n6XZdfpsD5sq1znqh62VblOdPAIAs2Fm3OSPPwwHurRDjp8aJHk2Cq53qGzAR49oFfQz46JLolHt8s11ffpC5HfKl6ea2AdbLBxE2yl1e/TJvGod81sI9cdsAv22LgPDmpwidvjEHkegVNQEuNplYtK+Hk479h6e5whz3OW/xt4F8fH4CQCD2e/qLfHFfK8BkXBF/gWxxfgMqQH7d9+HgsB8nZb1876+ACfbF6KEc0H9bNRz4fXuv4Bv2xeShHNB/UfUXtQHd1IuAV34D6kB/3viNrjATd+BE8SnsELeBUeUwE8eD/ciJ5DJRYln8v6lkb0HLJnrRK8b3EjTM+hGrJnbaIxMYAFOOvCHBgCw2CEnaNxMBV35pUxinyWXFgG42ACTLJzNI5p5jEdMJ+8ZnMS1KOg2ZwE9XBixnj8h1ePG6T3jcojyG9HGUmvK+pD8h77hwxnD5nXwIP6kILH/iHD2UNWNPAwYSJs/AFUxtrFECcAAA==
+  </data>
+ </layer>
+ <objectgroup color="#80e5a50a" id="7" name="Objektitaso 2">
+  <object id="105" x="854.668" y="1144.22" width="316.147" height="23" rotation="47.097">
+   <text wrap="1" color="#e5a50a">Ducksy McDuckface Codes 9001</text>
+  </object>
+ </objectgroup>
+ <layer id="3" name="sprites" width="50" height="50">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3BAQ0AAADCoPdPbQ43oAAAAAAAAAAAAODfAC7KO00QJwAA
+  </data>
+ </layer>
+ <layer id="4" name="midheight" width="50" height="50">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3UsQkAIAwEwLi2WgqurSMIKoLcwTcpQppPBADwo/76AIBN/hj8Q58BAACA23KKKDM1rc1PaXfWArBhAObFlyYQJwAA
+  </data>
+ </layer>
+ <layer id="5" name="over0" width="50" height="50">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+2XzQ6CMBCEt4+pnvwBLypwRF/eOZhASJpUSru7Yb5kQtNLh7bMLiLEGw3UQnfnPjqoh4bNHOn4GKE39NnMkW8fZL+UyqbamVcqm2pn3vh7bp0Je8gaK3U2Fyt1Npead45nb4t/c4znZwvtesH7YItSfQkhhMRgHbCFdl9A9OC3WI+UvfbQk3nY6xQ87DUROQeRC3QN2k7yeMD/E3o5fI8DPB+hU0ibt8oNPhuoDWnza5lnfWycQwefPTSEtPmlp+R1ZMr62Lg2a9aeZ/1yrNX7atUf9ny24P8XIRNfw4yAVBAnAAA=
+  </data>
+ </layer>
+ <objectgroup id="6" name="walls">
+  <object id="62" x="160" y="1472" width="32" height="32"/>
+  <object id="63" x="288" y="1120" width="32" height="32"/>
+  <object id="64" x="576" y="1056" width="32" height="32"/>
+  <object id="65" x="160" y="672" width="32" height="32"/>
+  <object id="66" x="352" y="512" width="32" height="32"/>
+  <object id="67" x="160" y="320" width="32" height="32"/>
+  <object id="68" x="320" y="128" width="32" height="32"/>
+  <object id="69" x="576" y="256" width="32" height="512"/>
+  <object id="70" x="576" y="736" width="256" height="32"/>
+  <object id="71" x="832" y="736" width="32" height="384"/>
+  <object id="72" x="832" y="1088" width="288" height="32"/>
+  <object id="73" x="1088" y="736" width="32" height="384"/>
+  <object id="74" x="1088" y="736" width="320" height="32"/>
+  <object id="75" x="1376" y="256" width="32" height="512"/>
+  <object id="76" x="0" y="0" width="32" height="1600"/>
+  <object id="77" x="0" y="1568" width="1600" height="32"/>
+  <object id="78" x="1568" y="0" width="32" height="1600"/>
+  <object id="79" x="0" y="0" width="1600" height="32"/>
+  <object id="80" x="864" y="320" width="32" height="32"/>
+  <object id="81" x="736" y="576" width="32" height="32"/>
+  <object id="82" x="1088" y="416" width="32" height="32"/>
+  <object id="83" x="1312" y="896" width="32" height="32"/>
+  <object id="84" x="800" y="1376" width="32" height="32"/>
+  <object id="85" x="1408" y="128" width="32" height="32"/>
+  <object id="86" x="1216" y="1344" width="32" height="32"/>
+  <object id="87" x="1312" y="1344" width="32" height="32"/>
+  <object id="88" x="1408" y="1344" width="32" height="32"/>
+  <object id="89" x="224" y="1184" width="224" height="64"/>
+  <object id="90" x="224" y="1248" width="32" height="192"/>
+  <object id="91" x="224" y="1440" width="512" height="64"/>
+  <object id="92" x="544" y="1184" width="160" height="64"/>
+  <object id="93" x="672" y="1248" width="32" height="64"/>
+  <object id="94" x="704" y="1248" width="32" height="192"/>
+  <object id="95" x="352" y="1344" width="96" height="32"/>
+  <object id="96" x="544" y="1344" width="96" height="32"/>
+  <object id="97" x="544" y="1280" width="96" height="64"/>
+  <object id="98" x="352" y="1280" width="96" height="64"/>
+  <object id="104" x="1022" y="1444.5" width="112" height="23">
+   <text wrap="1">Hei maailma</text>
+  </object>
+  <object id="106" x="160" y="928" width="384" height="96"/>
+  <object id="107" x="288" y="768" width="192" height="160"/>
+  <object id="108" x="256" y="800" width="32" height="128"/>
+  <object id="109" x="480" y="800" width="32" height="128"/>
+  <object id="110" x="512" y="832" width="32" height="96"/>
+  <object id="111" x="128" y="960" width="32" height="64"/>
+ </objectgroup>
+</map>
