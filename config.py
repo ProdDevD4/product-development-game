@@ -5,11 +5,7 @@ from typing import List
 
 import pygame
 from pygame.locals import *
-# define configuration variables here
-CURRENT_DIR = Path(__file__).parent
-RESOURCES_DIR = CURRENT_DIR / "data"
-HERO_MOVE_SPEED = 200  # pixels per second
-FPS = pygame.time.Clock()   #   clock for our tic rate
+
 
 # colours
 black = pygame.Color(0, 0, 0)         # Black

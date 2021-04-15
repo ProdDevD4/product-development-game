@@ -1,38 +1,12 @@
-""" 
-D4 GÄNG presents:
-                                                         
-▀███▀▀▀██▄                   ▀███                        
-  ██    ▀██▄                   ██                        
-  ██     ▀█████  ▀███  ▄██▀██  ██  ▄██▀ ▄██▀█████▀   ▀██▀
-  ██      ██ ██    ██ ██▀  ██  ██ ▄█    ██   ▀▀ ██   ▄█  
-  ██     ▄██ ██    ██ ██       ██▄██    ▀█████▄  ██ ▄█   
-  ██    ▄██▀ ██    ██ ██▄    ▄ ██ ▀██▄  █▄   ██   ███    
-▄████████▀   ▀████▀███▄█████▀▄████▄ ██▄▄██████▀   ▄█     
-                                                ▄█       
-                                              ██▀        
-                                                                 ▄▄▄▄                       
-▀████▄     ▄███▀      ▀███▀▀▀██▄                   ▀███        ▄█▀ ▀▀                       
-  ████    ████          ██    ▀██▄                   ██        ██▀                          
-  █ ██   ▄█ ██  ▄██▀██  ██     ▀█████  ▀███  ▄██▀██  ██  ▄██▀ █████  ▄█▀██▄  ▄██▀██  ▄▄█▀██ 
-  █  ██  █▀ ██ ██▀  ██  ██      ██ ██    ██ ██▀  ██  ██ ▄█     ██   ██   ██ ██▀  ██ ▄█▀   ██
-  █  ██▄█▀  ██ ██       ██     ▄██ ██    ██ ██       ██▄██     ██    ▄█████ ██      ██▀▀▀▀▀▀
-  █  ▀██▀   ██ ██▄    ▄ ██    ▄██▀ ██    ██ ██▄    ▄ ██ ▀██▄   ██   ██   ██ ██▄    ▄██▄    ▄
-▄███▄ ▀▀  ▄████▄█████▀▄████████▀   ▀████▀███▄█████▀▄████▄ ██▄▄████▄ ▀████▀██▄█████▀  ▀█████▀
-                                                                                            
-                                                                                            
-                           ▄▄                                                     
-  ▄▄█▀▀▀█▄█              ▀███                                                     
-▄██▀     ▀█                ██                                                ▄▄▄  
-██▀       ▀ ▄██▀██▄   ▄█▀▀███   ▄▄█▀██ ▄██▀███     ▄█▄▀▄█▄▄▄██▀▀██▄ ▄██▀▀██▄▀███  
-██         ██▀   ▀██▄██    ██  ▄█▀   ████   ▀▀    ███    ███▀    ▀███▀    ▀██ ██  
-██▄        ██     █████    ██  ██▀▀▀▀▀▀▀█████▄    ███    ███      ███      ██ ██  
-▀██▄     ▄▀██▄   ▄██▀██    ██  ██▄    ▄█▄   ██     ▀████████▄    ▄███▄    ▄██ ██  
-  ▀▀█████▀  ▀█████▀  ▀████▀███▄ ▀█████▀██████▀          ▄█▀▀██████▀ ▀██████▀▄████▄
-                                                     ▄██                          
-                                                   █▀▀                            
+""" Quest - An epic journey.
 
-Verion 0.9.1 ALPHA
+Simple demo that demonstrates PyTMX and pyscroll.
 
+requires pygame and pytmx.
+
+https://github.com/bitcraft/pytmx
+
+pip install pytmx
 """
 from __future__ import annotations
 
@@ -40,11 +14,8 @@ from pathlib import Path
 from typing import List
 
 import pygame
-from pygame.locals import *
-
-import random
-import sys     # sys-module will be needed to exit the program
-import pytmx
+from pygame.locals import K_UP, K_DOWN, K_LEFT, K_RIGHT, K_MINUS, K_EQUALS, K_ESCAPE
+from pygame.locals import KEYDOWN, VIDEORESIZE, QUIT
 from pytmx.util_pygame import load_pygame
 
 import pyscroll
@@ -55,7 +26,7 @@ from pyscroll.group import PyscrollGroup
 CURRENT_DIR = Path(__file__).parent
 RESOURCES_DIR = CURRENT_DIR / "data"
 HERO_MOVE_SPEED = 200  # pixels per second
-FPS = pygame.time.Clock()   #   clock for our tic rate
+
 
 # simple wrapper to keep the screen resizeable
 def init_screen(width: int, height: int) -> pygame.Surface:
@@ -65,7 +36,7 @@ def init_screen(width: int, height: int) -> pygame.Surface:
 
 # make loading images a little easier
 def load_image(filename: str) -> pygame.Surface:
-    return load_image(str(RESOURCES_DIR / filename))
+    return pygame.image.load(str(RESOURCES_DIR / filename))
 
 
 class Hero(pygame.sprite.Sprite):
@@ -88,30 +59,7 @@ class Hero(pygame.sprite.Sprite):
 
     def __init__(self) -> None:
         super().__init__()
-        
-        self.walk = []
-        self.walk.append(pygame.image.load("data/walk1.png").convert_alpha())
-        self.walk.append(pygame.image.load("data/walk2.png").convert_alpha())
-        
-        self.up = []
-        self.up.append(pygame.image.load("data/up1.png").convert_alpha())
-        self.up.append(pygame.image.load("data/up2.png").convert_alpha())
-        
-        self.walk_index = 0
-        self.up_index = 0
-        
-        self.walk_image = self.walk[self.walk_index]
-        self.up_image = self.up[self.up_index]
-        
-        self.images = []
-        self.images.append(pygame.image.load("data/walk1.png").convert_alpha())
-        self.images.append(pygame.image.load("data/hero.png").convert_alpha())
-        self.images.append(pygame.image.load("data/walk2.png").convert_alpha())
-        
-        self.index = 0
-        
-        self.image = self.images[self.index]
-        self.image = pygame.image.load("data/hero.png").convert_alpha()
+        self.image = load_image("hero.png").convert_alpha()
         self.velocity = [0, 0]
         self._position = [0.0, 0.0]
         self._old_position = self.position
@@ -127,32 +75,11 @@ class Hero(pygame.sprite.Sprite):
         self._position = list(value)
 
     def update(self, dt: float) -> None:
-
-        
         self._old_position = self._position[:]
         self._position[0] += self.velocity[0] * dt
         self._position[1] += self.velocity[1] * dt
         self.rect.topleft = self._position
         self.feet.midbottom = self.rect.midbottom
-        
-        self.walk_index += 1
-        self.up_index += 1
-        if self.walk_index >= len(self.walk):
-            self.walk_index = 0
-        if self.up_index >= len(self.up):
-            self.up_index = 0
-        self.walk_image = self.walk[self.walk_index]
-        self.up_image = self.up[self.up_index]
-        #when the update method is called, we will increment the index
-        self.index += 1
- 
-        #if the index is larger than the total images
-        if self.index >= len(self.images):
-            #we will make the index to 0 again
-            self.index = 0
-        
-        #finally we will update the image that will be displayed
-        self.image = self.images[self.index]
 
     def move_back(self, dt: float) -> None:
         """If called after an update, the sprite can move back"""
@@ -161,7 +88,7 @@ class Hero(pygame.sprite.Sprite):
         self.feet.midbottom = self.rect.midbottom
 
 
-class DucksyGame:
+class QuestGame:
     """This class is a basic game.
 
     This class will load data, create a pyscroll group, a hero object.
@@ -169,7 +96,7 @@ class DucksyGame:
     Finally, it uses a pyscroll group to render the map and Hero.
     """
 
-    map_path = RESOURCES_DIR / "level0.tmx"
+    map_path = RESOURCES_DIR / "grasslands.tmx"
 
     def __init__(self, screen: pygame.Surface) -> None:
         self.screen = screen
@@ -255,11 +182,6 @@ class DucksyGame:
             self.hero.velocity[1] = -HERO_MOVE_SPEED
         elif pressed[K_DOWN]:
             self.hero.velocity[1] = HERO_MOVE_SPEED
-
-        elif pressed[K_w]:
-            self.hero.velocity[1] = -HERO_MOVE_SPEED
-        elif pressed[K_s]:
-            self.hero.velocity[1] = HERO_MOVE_SPEED
         else:
             self.hero.velocity[1] = 0
 
@@ -267,14 +189,8 @@ class DucksyGame:
             self.hero.velocity[0] = -HERO_MOVE_SPEED
         elif pressed[K_RIGHT]:
             self.hero.velocity[0] = HERO_MOVE_SPEED
-
-        elif pressed[K_a]:
-            self.hero.velocity[0] = -HERO_MOVE_SPEED
-        elif pressed[K_d]:
-            self.hero.velocity[0] = HERO_MOVE_SPEED
         else:
             self.hero.velocity[0] = 0
-
 
     def update(self, dt):
         """Tasks that occur over time should be handled here"""
@@ -314,10 +230,10 @@ def main() -> None:
     pygame.init()
     pygame.font.init()
     screen = init_screen(800, 600)
-    pygame.display.set_caption("Ducksy McDucface Codes 9001")
+    pygame.display.set_caption("Quest - An epic journey.")
 
     try:
-        game = DucksyGame(screen)
+        game = QuestGame(screen)
         game.run()
     except KeyboardInterrupt:
         pass
